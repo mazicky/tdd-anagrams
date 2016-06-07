@@ -3,8 +3,9 @@ export default function anagrams(input) {
   ret.push(input)
   if (input.length == 2) {
     let reverse = ''
-    reverse += input.charAt(1)
-    reverse += input.charAt(0)
+    for (let i=input.length - 1; i>= 0; --i) {
+      reverse += input.charAt(i)
+    }
     ret.push(reverse)
   }
   return ret
