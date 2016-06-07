@@ -33,3 +33,11 @@ export function subStringExcept(string, except) {
   }
   return ret
 }
+
+export function reverse(string) {
+  let reverse = ''
+  for (let i=string.length - 1; i>= 0; --i) {
+    reverse += string.charAt(i)
+  }
+  return reverse
+}
