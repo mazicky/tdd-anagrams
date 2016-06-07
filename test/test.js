@@ -1,9 +1,10 @@
 import chai from 'chai'
+import anagrams from '../src/utils/anagrams'
 
 chai.should()
 
 describe ('Test', () => {
-  it ('should return the index of given number', () => {
-    [ 1, 2, 3 ].indexOf(1).should.equal(0)
+  it ('should return anagrams of givin string', () => {
+    anagrams('a').should.equal([ 'a' ])
   })
 })
