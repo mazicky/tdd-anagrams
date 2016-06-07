@@ -5,6 +5,6 @@ chai.should()
 
 describe ('Test', () => {
   it ('should return anagrams of givin string', () => {
-    anagrams('a').should.equal([ 'a' ])
+    anagrams('a').should.deep.equal([ 'a' ])
   })
 })
