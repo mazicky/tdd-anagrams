@@ -1,5 +1,5 @@
 import chai from 'chai'
-import anagrams from '../src/utils/anagrams'
+import { anagrams, subStringExcept } from '../src/utils/anagrams'
 
 chai.should()
 
@@ -14,5 +14,11 @@ describe ('Test', () => {
 
   it ('should return anagrams of givin string length 3', () => {
     anagrams('abc').should.deep.equal([ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ])
+  })
+
+  it ('substringexcept', () => {
+    subStringExcept('abc', 'a').should.equal('bc')
+    subStringExcept('abc', 'b').should.equal('ac')
+    subStringExcept('abc', 'c').should.equal('ab')
   })
 })

@@ -1,4 +1,4 @@
-export default function anagrams(input) {
+export function anagrams(input) {
   const ret = []
   ret.push(input)
   if (input.length == 2) {
@@ -7,6 +7,13 @@ export default function anagrams(input) {
       reverse += input.charAt(i)
     }
     ret.push(reverse)
+  }
+
+export function subStringExcept(string, except) {
+  let ret = ''
+  for(let i=0; i<string.length; ++i) {
+    if (string.charAt(i) !== except)
+      ret += string.charAt(i)
   }
   return ret
 }
