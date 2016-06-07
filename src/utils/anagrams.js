@@ -15,11 +15,7 @@ export function anagrams(input) {
   }
 
   if (input.length === 2) {
-    let reverse = ''
-    for (let i=input.length - 1; i>= 0; --i) {
-      reverse += input.charAt(i)
-    }
-    ret.push(reverse)
+    ret.push(reverse(input))
   }
 
   return ret
