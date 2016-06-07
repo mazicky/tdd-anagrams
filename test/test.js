@@ -11,4 +11,8 @@ describe ('Test', () => {
   it ('should return anagrams of givin string length 2', () => {
     anagrams('ab').should.deep.equal([ 'ab', 'ba' ])
   })
+
+  it ('should return anagrams of givin string length 3', () => {
+    anagrams('abc').should.deep.equal([ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ])
+  })
 })
