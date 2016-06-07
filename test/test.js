@@ -16,6 +16,14 @@ describe ('Test', () => {
     anagrams('abc').should.deep.equal([ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ])
   })
 
+  it ('should return anagrams of givin string length 4', () => {
+    anagrams('biro').should.deep.equal([
+      'biro', 'bior', 'brio', 'broi', 'boir', 'bori',
+      'ibro', 'ibor', 'irbo', 'irob', 'iobr', 'iorb',
+      'rbio', 'rboi', 'ribo', 'riob', 'roib', 'robi',
+      'obir', 'obri', 'oibr', 'oirb', 'orbi', 'orib' ])
+  })
+
   it ('substringexcept', () => {
     subStringExcept('abc', 'a').should.equal('bc')
     subStringExcept('abc', 'b').should.equal('ac')
