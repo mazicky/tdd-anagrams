@@ -1,21 +1,17 @@
 export function anagrams(input) {
-  const ret = []
-
-  if (input.length === 3) {
-    for (let i=0; i<3; ++i) {
-      const header = input.charAt(i)
-      const remain = anagrams(subStringExcept(input, header))
-      const candidates = remain.map(sub => {
-        return header+sub
-      })
-      ret.push(...candidates)
-    }
-  } else {
-    ret.push(input)
+  if (input.length === 1) {
+    return [ input ]
   }
 
-  if (input.length === 2) {
-    ret.push(reverse(input))
+  const ret = []
+  for (let i=0; i<input.length; ++i) {
+    const header = input.charAt(i)
+    const subString = subStringExcept(input, header)
+    const remain = anagrams(subString)
+    const candidates = remain.map(sub => {
+      return header+sub
+    })
+    ret.push(...candidates)
   }
 
   return ret
