@@ -1,5 +1,5 @@
 import chai from 'chai'
-import { anagrams, subStringExcept } from '../src/utils/anagrams'
+import { anagrams, reverse, subStringExcept } from '../src/utils/anagrams'
 
 chai.should()
 
@@ -20,5 +20,12 @@ describe ('Test', () => {
     subStringExcept('abc', 'a').should.equal('bc')
     subStringExcept('abc', 'b').should.equal('ac')
     subStringExcept('abc', 'c').should.equal('ab')
+  })
+
+  it ('reverse', () => {
+    reverse('a').should.equal('a')
+    reverse('ab').should.equal('ba')
+    reverse('abc').should.equal('cba')
+    reverse('abcdefg').should.equal('gfedcba')
   })
 })
